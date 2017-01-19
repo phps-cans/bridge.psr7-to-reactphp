@@ -1,0 +1,22 @@
+{
+  "name": "phps-cans/bridge.psr7-to-reactphp",
+  "type": "library",
+  "description": "Bridge allowing us to use reactphp with classic PSR7 responce/request",
+  "keywords": ["psr7", "reactphp"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Xavier HUBERTY",
+      "email": "x.huberty@thecodingmachine.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "zendframework/zend-diactoros": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PSCS\\Bridge\\": "src/"
+    }
+  }
+}
