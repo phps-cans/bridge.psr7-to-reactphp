@@ -93,23 +93,8 @@ class PSR7Bridge
     /**
      * @return string
      */
-    private function generateSessionId():string
+    private function generateSessionId(): string
     {
-        $entropy = '';
-
-        $entropy .= uniqid(mt_rand(), true);
-        $entropy .= microtime(true);
-
-        if (function_exists('openssl_random_pseudo_bytes')) {
-            $entropy .= openssl_random_pseudo_bytes(32, $strong);
-        }
-
-        if (function_exists('mcrypt_create_iv')) {
-            $entropy .= mcrypt_create_iv(32, MCRYPT_DEV_URANDOM);
-        }
-
-        $hash = hash('whirlpool', $entropy);
-
-        return $hash;
+        return bin2hex(random_bytes(32));
     }
 }
